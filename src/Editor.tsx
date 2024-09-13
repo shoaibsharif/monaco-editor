@@ -61,7 +61,7 @@ export const Editor = ({
   defaultValue,
   onChange,
 }: {
-  defaultValue: string;
+  defaultValue?: string;
   onChange?: (value: string) => void;
 }) => {
   const editorRef = useRef(null);
