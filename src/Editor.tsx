@@ -1,4 +1,4 @@
-import { shikiToMonaco } from "@shikijs/monaco";
+// import { shikiToMonaco } from "@shikijs/monaco";
 import * as monaco from "monaco-editor";
 import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
 import jsonWorker from "monaco-editor/esm/vs/language/json/json.worker?worker";
@@ -7,7 +7,7 @@ import esTree from "prettier/plugins/estree";
 import prettier from "prettier/standalone";
 import { debounce } from "radash";
 import { useEffect, useRef, useState } from "react";
-import { createHighlighter } from "shiki";
+// import { createHighlighter } from "shiki";
 
 self.MonacoEnvironment = {
   getWorker(_, label) {
@@ -17,10 +17,10 @@ self.MonacoEnvironment = {
     return new editorWorker();
   },
 };
-const highlighter = await createHighlighter({
-  themes: ["catppuccin-macchiato"],
-  langs: ["json"],
-});
+// const highlighter = await createHighlighter({
+//   themes: ["catppuccin-macchiato"],
+//   langs: ["json"],
+// });
 const formatJsonWithPrettier = async (json: string) => {
   try {
     // const formatted = JSON.stringify(JSON.parse(json), null, 2);
@@ -55,7 +55,7 @@ monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
   enableSchemaRequest: false,
 });
 
-shikiToMonaco(highlighter, monaco);
+// shikiToMonaco(highlighter, monaco);
 
 export const Editor = ({
   defaultValue,
@@ -74,7 +74,7 @@ export const Editor = ({
       const editor = monaco.editor.create(editorRef.current, {
         value: defaultValue,
         language: "json",
-        theme: "catppuccin-macchiato",
+        theme: "vs-dark",
         automaticLayout: true,
         minimap: { enabled: false },
         formatOnType: true,
