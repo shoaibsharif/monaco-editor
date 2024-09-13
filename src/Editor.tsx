@@ -95,7 +95,6 @@ export const Editor = ({
         inlayHints: { enabled: "off" },
         parameterHints: { enabled: false },
         disableLayerHinting: true,
-        renderWhitespace: "all",
         tabSize: 2,
         fontSize: 15,
         fontFamily: "Fira Mono",
